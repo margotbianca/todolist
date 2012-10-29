@@ -102,10 +102,11 @@
 					console.log(entry_field.val());
 					
 				//			for (var i=0; i < taskList.length; i++){????}
+				//		var entry = String("<li>"(entry_field.val())"</li>")
+						var item = $('.a').append("<li>" + (entry_field.val()) + "</li>");
+						var newTask = taskList.push(item)
 						
-						var newTask = $('.a').append("<li>",(entry_field.val()),"</li>");
 						
-				//why is there is a break after the bullet? - the items in append() are not being added in the order they are listed
 				//how to append the DOM elements ("<li>",(entry_field.val()),"</li>") to the array taskList, so the function striker applies
 					
 					
