@@ -89,26 +89,34 @@
 
 
 		var entry_field = $('#task_entry');	
+		var taskList = $("li");
+			
+
+		var striker = taskList.click(function(e){
+			$(this).toggleClass("completed");
+		});
 		
 		$(document).keyup(function(e){ 
 				if(e.keyCode == 13){
 					console.log("Enter Key pressed");
 					console.log(entry_field.val());
-										
-
-				}
+					
+				//			for (var i=0; i < taskList.length; i++){????}
+						
+						var newTask = $('.a').append("<li>",(entry_field.val()),"</li>");
+						
+				//why is there is a break after the bullet? - the items in append() are not being added in the order they are listed
+				//how to append the DOM elements ("<li>",(entry_field.val()),"</li>") to the array taskList, so the function striker applies
+					
+					
+					
+				};
 			
 			});
 			
 
 
-		var taskList = $("li");
-			
 
-		taskList.click(function(e){
-			$(this).toggleClass("completed")
-		})
-				
 			
 						
 		
