@@ -75,10 +75,10 @@
 
 	<div class="left">
 			<ul class="a">   
-				<li>Refill RX</li>
-				<li>Do homework</li>
-				<li>Buy cereal</li>
-				<li>Pick up laundry</li>										         
+				<li class="">Refill RX</li>
+				<li class="">Do homework</li>
+				<li class="">Buy cereal</li>
+				<li class="">Pick up laundry</li>										         
 			</ul>                 
 	 	</div>
 		
@@ -92,29 +92,26 @@
 		var taskList = $("li");
 			
 
-		var striker = taskList.click(function(e){
-			$(this).toggleClass("completed");
-		});
 		
 		$(document).keyup(function(e){ 
 				if(e.keyCode == 13){
 					console.log("Enter Key pressed");
 					console.log(entry_field.val());
+					var item_1 = ("<li>" + (entry_field.val()) + "</li>")
+					var item = $('.a').append(item_1);
+					taskList.push(item_1)
+				//	toomany only toggles every other field....
+					var toomany = $('li').click(function(e){
+						$(this).toggleClass("completed")
+					})
 					
-				//			for (var i=0; i < taskList.length; i++){????}
-				//		var entry = String("<li>"(entry_field.val())"</li>")
-						var item = $('.a').append("<li>" + (entry_field.val()) + "</li>");
-						var newTask = taskList.push(item)
-						
-						
-				//how to append the DOM elements ("<li>",(entry_field.val()),"</li>") to the array taskList, so the function striker applies
-					
-					
-					
+				
 				};
-			
 			});
 			
+		var striker = taskList.click(function(e){
+			$(this).toggleClass("completed");
+		});
 
 
 
