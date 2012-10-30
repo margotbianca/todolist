@@ -98,12 +98,12 @@
 					console.log("Enter Key pressed");
 					console.log(entry_field.val());
 					var item_1 = ("<li>" + (entry_field.val()) + "</li>")
-					var item = $('.a').append(item_1);
-					taskList.push(item_1)
-				//	toomany only toggles every other field....
-					var toomany = $('li').click(function(e){
+					var item = $(item_1).appendTo($('.a')).click(function(e){
+						console.log("clicked...")
 						$(this).toggleClass("completed")
-					})
+					});
+				//	taskList.push(item_1)
+				//	var toomany = item_1.
 					
 				
 				};
@@ -113,7 +113,7 @@
 			$(this).toggleClass("completed");
 		});
 
-
+		
 
 			
 						
