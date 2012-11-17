@@ -13,14 +13,14 @@
 	<meta name="keywords" content="" />
 
 	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
-	
+
 	<style type="text/css" media="screen">		
 		/*local styles if any (quick tests and local only overrides)*/
-		
+
 		.completed{
 			text-decoration: line-through;
 		}
-		
+
 		h3{
 			border: 1px solid black;
 			text-align: center;
@@ -31,7 +31,7 @@
 			text-shadow: #CCCCCC 10px 10px 2px;
 			letter-spacing: 20px;
 		}
-		
+
 		body{
 			background-color:#FFFFFF;
 			background-image:url('http://placekitten.com/400/1200');/*Replace with cool background image*/
@@ -39,27 +39,27 @@
 			background-position:right top;
 			margin-right:400px;
 			}
-			
-		
-		
+
+
+
 		.left
 		{
 		margin:20px;
 		font-family:Arial,Trebuchet,Sans-serif;
 		font-size:14px;
 		text-align: left;
-		
+
 		}
 
 		ul.a {
 			list-style: square;
 			padding: 10px;
 			margin: 10px;
-			
-			
+
+
 		}
-		
-		
+
+
 	</style>
 </head>
 <body>
@@ -81,8 +81,8 @@
 				<li class="">Pick up laundry</li>										         
 			</ul>                 
 	 	</div>
-		
-		
+
+
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" charset="utf-8">
@@ -90,9 +90,9 @@
 
 		var entry_field = $('#task_entry');	
 		var taskList = $("li");
-			
 
-		
+
+
 		$(document).keyup(function(e){ 
 				if(e.keyCode == 13){
 					console.log("Enter Key pressed");
@@ -104,20 +104,20 @@
 					});
 				//	taskList.push(item_1)
 				//	var toomany = item_1.
-					
-				
+
+
 				};
 			});
-			
+
 		var striker = taskList.click(function(e){
 			$(this).toggleClass("completed");
 		});
 
-		
 
-			
-						
-		
+
+
+
+
 	</script>
 </body>
 </html>
