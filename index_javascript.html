@@ -68,85 +68,57 @@
 		<h3>TO DO LIST</h3>
 		<div>
 				Date: <!-- today's date -->
-		<br>	New Task:
+Task:
 				<input type="text" name="task_entry" value="" id="task_entry">
 </div>
 
 
 	<div class="left">
 			<ul class="a">   
+				<li>Refill RX</li>
+				<li>Do homework</li>
+				<li>Buy cereal</li>
+				<li>Pick up laundry</li>										         
 			</ul>                 
 	 	</div>
 		
 		
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" charset="utf-8">
 
 
-		var entry_field = $('#task_entry');	
-		var taskList = $("li");
-		var options = {
-			username: "margoth"
-		}
-		var newtask = (entry_field.val())
-					
-		function complete(e){
-			$(this).toggleClass("completed");
-			var numberid = $(this).attr("data-id");
-			$.ajax({
-				url: "http://sva.designedbyscience.com/task/" + numberid,
-				type: "POST",
-				data: options
-			}).done(function(data){
-				console.log("completed the task")
-			});
-		};
+		// var entry_field = document.getElementById("task_entry");
+		var entry_field = document.querySelector("#task_entry");	
 		
-		taskList.click(complete)
 		
-		$(document).keyup(function(e){ 
+		document.addEventListener("keyup", function(e){ 
 				if(e.keyCode == 13){
 					console.log("Enter Key pressed");
-					console.log(entry_field.val());
-
-					var new_li = $("<li></li>").text(entry_field.val()).appendTo($('.a')).click(complete)
-					$.ajax({
-						url: "http://sva.designedbyscience.com/task",
-						type: "POST",
-						data: options, 
-						task: (entry_field.val())
-					}).done(function(data){
-						console.log("new stuff added")
-					})
-				};
-		});
-		
-
-		$.ajax({			
-			url: "http://sva.designedbyscience.com/tasks",
-			type: "GET",
-			data: options  
-		
-		}).done(function(data){
-			var formatted_data = $.parseJSON(data);
-			console.log(formatted_data);
-
-			for (var i=0; i < formatted_data.length; i++) {
-				var new_li = $("<li></li>").text(formatted_data[i].task_text).appendTo($(".a"));
-				new_li.attr("data-id", formatted_data[i].id);
-
-				if(formatted_data[i].completed){
-					new_li.addClass("completed");
-				};
-
-			new_li.click(complete);
-			};
-		});
-		
-
+					console.log(entry_field.value);
+					//We'll add the new task to the list in here
+					//But not now
+				}
 			
-						
+			 }, false);
+
+		function complete(e){
+			e.target.classList.toggle("completed");
+		}
+
+		//This is a list (an array)
+		var taskList = document.querySelectorAll("li");
+		//When we want to do something to each item in the list, we use a for loop
+		//First piece is the counter
+		//Second piece is the condition
+		//Third piece is the iterator
+		for (var i=0; i < taskList.length; i++) {
+			//This is accessing a specific element in that list
+
+			taskList[i].addEventListener("click", complete, false);
+			
+			// taskList[i].addEventListener("click", function(e){ e.target.classList.toggle("completed"); }, false);			
+		};
+
 		
 	</script>
 </body>

@@ -1,7 +1,4 @@
-homework: converted index.html to jquery - saved as index_jquery.html
-homework: add input value as a new item on the list. questions and answers below:
-1.why is there is a break after the bullet? - the items in append() are not being added in the order they are listed. <li></li> then the entry field val
-ANSWER - USE "+" instead of ","
-2.how to append the DOM elements ("<li>",(entry_field.val()),"</li>") to the array taskList, so the function striker applies (toggling line-through)
-ANSWER - use appendTo instead of append - able to then reference the var item_1 as "this" during the click function.
-3. question for next week - how to make the html remember these for next time i load the to do list?
+
+updated list with sva.designedbyscience.com JSON database of tasks for username margoth
+
+renamed some files - index.html is now the most current version
